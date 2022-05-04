@@ -7,8 +7,8 @@
 #' @return A list of generated random number
 #' @export
 rlnorm2 <- function(n, mean = 1, sd = 1) {
-  sdlog <- sqrt(log((sd/mean)^2 + 1))
-  meanlog <- log(mean) - (sdlog^2) / 2
+  sdlog <- sqrt(log((sd / mean) ^ 2 + 1))
+  meanlog <- log(mean) - (sdlog ^ 2) / 2
   rlnorm(n, meanlog = meanlog, sdlog = sdlog)
 }
 
@@ -21,7 +21,7 @@ rlnorm2 <- function(n, mean = 1, sd = 1) {
 #' @return Mean of original distribution
 #' @export
 convertLogToMean <- function(meanlog = 1, sdlog = 1) {
-  exp(meanlog + (sdlog^2) / 2)
+  exp(meanlog + (sdlog ^ 2) / 2)
 }
 
 
@@ -33,7 +33,7 @@ convertLogToMean <- function(meanlog = 1, sdlog = 1) {
 #' @return SD of original distribution
 #' @export
 convertLogToSD <- function(meanlog = 1, sdlog = 1) {
-  exp(2*meanlog + (sdlog^2)) * (exp(sdlog^2) - 1)
+  exp(2 * meanlog + (sdlog ^ 2)) * (exp(sdlog ^ 2) - 1)
 }
 
 
@@ -55,21 +55,37 @@ histLogND <- function(data) {
 
   # Draw histogram of original distribution
   hist(data)
-  abline(v=mean, col="red")
-  abline(v=exp(mean.log), col="blue")
-  abline(v=med, col="green")
-  mtext(sprintf("mean(r)=%.2f\nmean.log(b)=%.2f\nmedian(g)=%.2f",
-                mean, exp(mean.log), med),
-        side = 3, adj = 1, line=-3)
+  abline(v = mean, col = "red")
+  abline(v = exp(mean.log), col = "blue")
+  abline(v = med, col = "green")
+  mtext(
+    sprintf(
+      "mean(r)=%.2f\nmean.log(b)=%.2f\nmedian(g)=%.2f",
+      mean,
+      exp(mean.log),
+      med
+    ),
+    side = 3,
+    adj = 1,
+    line = -3
+  )
 
   # Draw histogram of log converted distribution
   hist(data.log)
-  abline(v=log(mean), col="red")
-  abline(v=mean.log, col="blue")
-  abline(v=med.log, col="green")
-  mtext(sprintf("mean(r)=%.2f\nmean.log(b)=%.2f\nmedian(g)=%.2f",
-                log(mean), mean.log, med.log),
-        side = 3, adj = 1, line=-3)
+  abline(v = log(mean), col = "red")
+  abline(v = mean.log, col = "blue")
+  abline(v = med.log, col = "green")
+  mtext(
+    sprintf(
+      "mean(r)=%.2f\nmean.log(b)=%.2f\nmedian(g)=%.2f",
+      log(mean),
+      mean.log,
+      med.log
+    ),
+    side = 3,
+    adj = 1,
+    line = -3
+  )
 
   par(mfrow = c(1, 1)) # resetting graphic param
 
@@ -84,10 +100,11 @@ histLogND <- function(data) {
 normalityCheckLogND <- function(data) {
   data.log <- log(data)
   qqnorm(y = data.log)
-  qqline(y = data.log, col="blue")
+  qqline(y = data.log, col = "blue")
 
-  result <- shapiro.test(x=data.log)
-  result$method <- "Shapiro-Wilk normality test (null hypothesis: data is ND)"
+  result <- shapiro.test(x = data.log)
+  result$method <-
+    "Shapiro-Wilk normality test (null hypothesis: data is ND)"
   result
 }
 
@@ -97,17 +114,24 @@ normalityCheckLogND <- function(data) {
 #' @importFrom boot boot
 #' @param data A list of log normal distribution
 #' @export
-meanIntervalLogND <- function(data, R=1000, graphic=FALSE) {
-  statFun <- function(x, idx) mean(x[idx])
+meanIntervalLogND <- function(data, R = 1000, graphic = FALSE) {
+  statFun <- function(x, idx)
+    mean(x[idx])
   result <- boot(data, R = R, statistic = statFun)
   qtl <- quantile(result$t, probs = c(0.025, 0.5, 0.975))
 
   if (graphic) {
+    par(mfrow = c(1,2))
     hist(data)
-    abline(v=qtl[2], col="red")
-    abline(v=qtl[1], col="blue")
-    abline(v=qtl[3], col="blue")
+    abline(v = qtl[2], col = "red")
+    abline(v = qtl[1], col = "blue")
+    abline(v = qtl[3], col = "blue")
+
+    plot(density(result$t), main="Bootstrap result", xlab="Mean estimator")
+    abline(v = qtl[2], col = "red")
+    abline(v = qtl[1], col = "blue")
+    abline(v = qtl[3], col = "blue")
+    par(mfrow = c(1,1))
   }
   qtl
 }
-

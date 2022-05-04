@@ -54,10 +54,10 @@ normalityCheckLogND(logND)
     #>  Shapiro-Wilk normality test (null hypothesis: data is ND)
     #> 
     #> data:  data.log
-    #> W = 0.98634, p-value = 0.3949
+    #> W = 0.98471, p-value = 0.3027
 
 `meanIntervalLogND` calculates the interval estimate of mean for log
-normal distribution using Bootstrap.
+normal distribution using Bootstrap method.
 
 ``` r
 meanIntervalLogND(logND, graphic=TRUE)
@@ -66,4 +66,4 @@ meanIntervalLogND(logND, graphic=TRUE)
 <img src="man/figures/README-example3-1.png" width="100%" />
 
     #>     2.5%      50%    97.5% 
-    #> 4.918698 5.275075 5.676393
+    #> 4.625328 5.063484 5.572725

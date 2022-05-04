@@ -53,7 +53,7 @@ histLogND(logND)
 normalityCheckLogND(logND)
 ```
 
-`meanIntervalLogND` calculates the interval estimate of mean for log normal distribution using Bootstrap.
+`meanIntervalLogND` calculates the interval estimate of mean for log normal distribution using Bootstrap method.
 ```{r example3}
 meanIntervalLogND(logND, graphic=TRUE)
 ```
