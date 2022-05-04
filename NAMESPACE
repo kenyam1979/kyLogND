@@ -3,4 +3,5 @@
 export(convertLogToMean)
 export(convertLogToSD)
 export(histLogND)
+export(normalityCheckLogND)
 export(rlnorm2)

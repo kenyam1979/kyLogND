@@ -7,10 +7,11 @@
 histLogND(data)
 }
 \arguments{
-\item{data}{A list of log normal distribution]}
+\item{data}{A list of log normal distribution}
 }
 \description{
-\code{histLogND} draw histogram of original and log converted distribution
-Red vertical line shows the mean of the original distribution
-Blue vertical line shows the mean of log converted distribution
+\code{histLogND} draws histogram of original and log converted distribution.
+Red vertical line shows the mean of the original distribution.
+Blue vertical line shows the mean of log converted distribution.
+Green vertical line shows the median of the distribution.
 }

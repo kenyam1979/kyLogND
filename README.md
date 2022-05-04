@@ -23,6 +23,7 @@ devtools::install_github("kenyam1979/kyLogND")
 ## Utility functions in kyLogND
 
   - histLogND
+  - normalityCheckLogND
   - rlnorm2
   - convertLogToMean
   - convertLogToSD
@@ -37,3 +38,8 @@ histLogND(logND)
 ```
 
 <img src="man/figures/README-example-1.png" width="100%" />
+
+``` r
+#logND <- rlnorm2(1000)
+#normalityCheckLogND(logND)
+```
