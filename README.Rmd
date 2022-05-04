@@ -36,7 +36,6 @@ devtools::install_github("kenyam1979/kyLogND")
 * convertLogToMean
 * convertLogToSD
 
-
 `histLogND` draws histograms of the original distribution and log converted distribution with their mean and median.
 
 ```{r example}

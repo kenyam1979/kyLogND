@@ -53,4 +53,4 @@ normalityCheckLogND(logND)
     #>  Shapiro-Wilk normality test (null hypothesis: data is ND)
     #> 
     #> data:  data.log
-    #> W = 0.9982, p-value = 0.3763
+    #> W = 0.99649, p-value = 0.02444
