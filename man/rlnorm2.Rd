@@ -2,7 +2,7 @@
 % Please edit documentation in R/kyLogND.R
 \name{rlnorm2}
 \alias{rlnorm2}
-\title{Generate random numbers with log normal distribution}
+\title{Generate random numbers in log normal distribution}
 \usage{
 rlnorm2(n, mean = 1, sd = 1)
 }
@@ -17,5 +17,5 @@ rlnorm2(n, mean = 1, sd = 1)
 A list of generated random number
 }
 \description{
-\code{rlnorm2} Generate random numbers with log normal distribution
+\code{rlnorm2} generates random numbers in log normal distribution
 }
