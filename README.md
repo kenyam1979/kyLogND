@@ -24,6 +24,7 @@ devtools::install_github("kenyam1979/kyLogND")
 
   - histLogND
   - normalityCheckLogND
+  - meanIntervalLogND
   - rlnorm2
   - convertLogToMean
   - convertLogToSD
@@ -53,4 +54,11 @@ normalityCheckLogND(logND)
     #>  Shapiro-Wilk normality test (null hypothesis: data is ND)
     #> 
     #> data:  data.log
-    #> W = 0.99649, p-value = 0.02444
+    #> W = 0.99874, p-value = 0.718
+
+`meanIntervalLogND` calculates the interval estimate of mean for log
+normal distribution using Bootstrap.
+
+``` r
+#meanIntervalLogND(logND)
+```

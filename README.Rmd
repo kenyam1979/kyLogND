@@ -32,6 +32,7 @@ devtools::install_github("kenyam1979/kyLogND")
 
 * histLogND
 * normalityCheckLogND
+* meanIntervalLogND
 * rlnorm2
 * convertLogToMean
 * convertLogToSD
@@ -50,4 +51,9 @@ histLogND(logND)
 
 ```{r example2}
 normalityCheckLogND(logND)
+```
+
+`meanIntervalLogND` calculates the interval estimate of mean for log normal distribution using Bootstrap.
+```{r example3}
+#meanIntervalLogND(logND)
 ```

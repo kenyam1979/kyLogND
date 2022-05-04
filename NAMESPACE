@@ -3,5 +3,7 @@
 export(convertLogToMean)
 export(convertLogToSD)
 export(histLogND)
+export(meanIntervalLogND)
 export(normalityCheckLogND)
 export(rlnorm2)
+importFrom(boot,boot)
