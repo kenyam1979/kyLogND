@@ -35,7 +35,7 @@ converted distribution with their mean and median.
 ``` r
 library(kyLogND)
 
-logND <- rlnorm2(1000)
+logND <- rlnorm2(100, mean=5, sd=2)
 histLogND(logND)
 ```
 
@@ -54,11 +54,16 @@ normalityCheckLogND(logND)
     #>  Shapiro-Wilk normality test (null hypothesis: data is ND)
     #> 
     #> data:  data.log
-    #> W = 0.99874, p-value = 0.718
+    #> W = 0.98634, p-value = 0.3949
 
 `meanIntervalLogND` calculates the interval estimate of mean for log
 normal distribution using Bootstrap.
 
 ``` r
-#meanIntervalLogND(logND)
+meanIntervalLogND(logND, graphic=TRUE)
 ```
+
+<img src="man/figures/README-example3-1.png" width="100%" />
+
+    #>     2.5%      50%    97.5% 
+    #> 4.918698 5.275075 5.676393

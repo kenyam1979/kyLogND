@@ -99,14 +99,14 @@ normalityCheckLogND <- function(data) {
 #' @export
 meanIntervalLogND <- function(data, R=1000, graphic=FALSE) {
   statFun <- function(x, idx) mean(x[idx])
-  result <- boot(data, R=R, statistic=statFun)
-  qtl <- quantile(result$t, probs=c(0.025, 0.5, 0.975))
+  result <- boot(data, R = R, statistic = statFun)
+  qtl <- quantile(result$t, probs = c(0.025, 0.5, 0.975))
 
   if (graphic) {
     hist(data)
-    abline(v=qtl[2], col = "red")
-    abline(v=qtl[1], col = "blue")
-    abline(v=qtl[3], col = "blue")
+    abline(v=qtl[2], col="red")
+    abline(v=qtl[1], col="blue")
+    abline(v=qtl[3], col="blue")
   }
   qtl
 }

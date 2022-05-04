@@ -42,7 +42,7 @@ devtools::install_github("kenyam1979/kyLogND")
 ```{r example}
 library(kyLogND)
 
-logND <- rlnorm2(1000)
+logND <- rlnorm2(100, mean=5, sd=2)
 histLogND(logND)
 ```
 
@@ -55,5 +55,5 @@ normalityCheckLogND(logND)
 
 `meanIntervalLogND` calculates the interval estimate of mean for log normal distribution using Bootstrap.
 ```{r example3}
-#meanIntervalLogND(logND)
+meanIntervalLogND(logND, graphic=TRUE)
 ```
