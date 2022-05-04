@@ -28,7 +28,8 @@ devtools::install_github("kenyam1979/kyLogND")
   - convertLogToMean
   - convertLogToSD
 
-<!-- end list -->
+`histLogND` draws histograms of the original distribution and log
+converted distribution with their mean and median.
 
 ``` r
 library(kyLogND)
@@ -39,7 +40,17 @@ histLogND(logND)
 
 <img src="man/figures/README-example-1.png" width="100%" />
 
+`normalityCheckLogND` checks the normality of log transformed
+distribution using QQ-plot and Shaprio test.
+
 ``` r
-#logND <- rlnorm2(1000)
-#normalityCheckLogND(logND)
+normalityCheckLogND(logND)
 ```
+
+<img src="man/figures/README-example2-1.png" width="100%" />
+
+    #> 
+    #>  Shapiro-Wilk normality test (null hypothesis: data is ND)
+    #> 
+    #> data:  data.log
+    #> W = 0.9982, p-value = 0.3763

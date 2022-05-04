@@ -58,14 +58,18 @@ histLogND <- function(data) {
   abline(v=mean, col="red")
   abline(v=exp(mean.log), col="blue")
   abline(v=med, col="green")
-  mtext(sprintf("mean(r)=%.2f, mean.log(b)=%.2f, median(g)=%.2f", mean, exp(mean.log), med))
+  mtext(sprintf("mean(r)=%.2f\nmean.log(b)=%.2f\nmedian(g)=%.2f",
+                mean, exp(mean.log), med),
+        side = 3, adj = 1, line=-3)
 
   # Draw histogram of log converted distribution
   hist(data.log)
   abline(v=log(mean), col="red")
   abline(v=mean.log, col="blue")
   abline(v=med.log, col="green")
-  mtext(sprintf("mean(r)=%.2f, mean.log(b)=%.2f, median(g)=%.2f", log(mean), mean.log, med.log))
+  mtext(sprintf("mean(r)=%.2f\nmean.log(b)=%.2f\nmedian(g)=%.2f",
+                log(mean), mean.log, med.log),
+        side = 3, adj = 1, line=-3)
 
   par(mfrow = c(1, 1)) # resetting graphic param
 
