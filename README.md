@@ -22,11 +22,18 @@ devtools::install_github("kenyam1979/kyLogND")
 
 ## Utility functions in kyLogND
 
+  - histLogND
+  - rlnorm2
+  - convertLogToMean
+  - convertLogToSD
+
+<!-- end list -->
+
 ``` r
 library(kyLogND)
 
-logND <- rlnorm2(100)
-hist(logND)
+logND <- rlnorm2(1000)
+histLogND(logND)
 ```
 
 <img src="man/figures/README-example-1.png" width="100%" />

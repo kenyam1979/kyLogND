@@ -38,7 +38,7 @@ convertLogToSD <- function(meanlog = 1, sdlog = 1) {
 
 
 #' @title Compare histogram between original and log converted distribution
-#' @description \code{histLogND} draw histogram of original and log converted distribution.
+#' @description \code{histLogND} draw histogram of original and log %>%  converted distribution.
 #' Red vertical line shows the mean of the original distribution.
 #' Blue vertical line shows the mean of log converted distribution.
 #'
